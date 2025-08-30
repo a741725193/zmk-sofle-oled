@@ -1,0 +1,15 @@
+file_format: "1"
+id: eyelash_sofle
+name: Eyelash Sofle
+url: https://github.com/a741725193/zmk-sofle-oled
+type: shield
+requires: [pro_micro]
+features:
+  - keys
+  - display
+outputs:
+  - usb
+  - ble
+siblings:
+  - eyelash_sofle_left
+  - eyelash_sofle_right

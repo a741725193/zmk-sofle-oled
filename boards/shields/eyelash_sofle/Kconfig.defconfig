@@ -1,7 +1,7 @@
-if SHIELD_EYESLASH_SOFLE_LEFT
+if SHIELD_EYELASH_SOFLE_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "Eyeslash Solfe"
+    default "Eyelash Solfe"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
@@ -9,7 +9,7 @@ config ZMK_SPLIT_ROLE_CENTRAL
 endif
 
 
-if SHIELD_EYESLASH_SOFLE_LEFT || SHIELD_EYESLASH_SOFLE_RIGHT
+if SHIELD_EYELASH_SOFLE_LEFT || SHIELD_EYELASH_SOFLE_RIGHT
 
 config ZMK_SPLIT
     default y
