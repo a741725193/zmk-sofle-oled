@@ -1,7 +1,7 @@
 #include <physical_layouts.dtsi>
 
 / {
-    eyelash_sofle_layout: eyelash_sofle_layout {
+    eyeslash_sofle_layout: eyeslash_sofle_layout {
         compatible = "zmk,physical-layout";
         display-name = "Layout";
         transform = <&default_transform>;

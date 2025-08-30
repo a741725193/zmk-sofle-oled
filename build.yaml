@@ -1,9 +1,8 @@
----
 include:
-  - board: eyelash_sofle_right
-  - board: eyelash_sofle_left
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
-    artifact-name: eyelash_sofle_studio_left
-  - board: eyelash_sofle_left
+  - board: eyelash_nano
+    shield: eyelash_sofle_right 
+  - board: eyelash_nano
+    shield: eyelash_sofle_left 
+    cmake-args: -DDTS_EXTRA_CPPFLAGS=-DMOUSE_PS2_ALT_PINS
+  - board: eyelash_nano
     shield: settings_reset

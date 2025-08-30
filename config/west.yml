@@ -4,21 +4,21 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: mctechnology17
       url-base: https://github.com/mctechnology17
-  #  - name: gpeye
-  #    url-base: https://github.com/GPeye
+    - name: eyelash
+      url-base: https://github.com/a741725193
   projects:
-   # - name: mario-peripheral-animation
-   #   remote: gpeye
-   #    revision: main 
-    - name: eyelash_sofle
-      url: https://github.com/a741725193/zmk-sofle
-      revision: main
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    # - name: zmk-nice-oled
-    #   remote: mctechnology17
-    #   revision: main
+    - name: zmk-pmw3610-driver
+      remote: badjeff
+      revision: main
+    - name: zmk-nice-oled
+      remote: mctechnology17
+      revision: main
+    - name: zmk-board-eyelash
+      remote: eyelash
+      revision: main
   self:
-    path: boards
+    path: config
