@@ -14,5 +14,8 @@ manifest:
     - name: zmk-nice-oled
       remote: mctechnology17
       revision: main
+    - name: zmk-board-eyelash
+      remote: eyelash
+      revision: main
   self:
     path: config
