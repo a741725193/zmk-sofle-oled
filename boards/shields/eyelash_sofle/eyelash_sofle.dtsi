@@ -27,20 +27,19 @@
         };
     };
 
-	left_encoder: encoder_left {
-		compatible = "alps,ec11";
-		label = "LEFT_ENCODER";
-		resolution = <4>;
-        steps = <40>;
+    left_encoder: encoder_left {
+        compatible = "alps,ec11";
         a-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-	    b-gpios = <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-		status = "disabled";
-	};
+        b-gpios = <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <40>;
+        status = "disabled";
+    };
 
     sensors {
-		compatible = "zmk,keymap-sensors";
-		sensors = <&left_encoder>;
-	};
+        compatible = "zmk,keymap-sensors";
+        triggers-per-rotation = <20>;
+        sensors = <&left_encoder>;
+    };
 
     kscan0: kscan {
         wakeup-source;
@@ -76,15 +75,15 @@
 
     i2c0_default: i2c0_default {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 20)>,
-                <NRF_PSEL(TWIM_SCL, 0, 17)>;
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                <NRF_PSEL(TWIM_SCL, 0, 20)>;
         };
     };
 
     i2c0_sleep: i2c0_sleep {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 20)>,
-                <NRF_PSEL(TWIM_SCL, 0, 17)>;
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                <NRF_PSEL(TWIM_SCL, 0, 20)>;
             low-power-enable;
         };
     };
@@ -155,7 +154,7 @@ zephyr_udc0: &usbd {
 	compatible = "nordic,nrf-twi";
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
-	oled: ssd1306@3c {
+	  oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
         width = <128>;
@@ -164,8 +163,10 @@ zephyr_udc0: &usbd {
         page-offset = <0>;
         display-offset = <0>;
         multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
         com-sequential;
         inversion-on;
         prechargep = <0x22>;
-	};
+    };
 };
